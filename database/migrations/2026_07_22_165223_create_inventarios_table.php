@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('inventarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50);
-            $table->string('ci', 8)->unique();
-            $table->string('rol', 15);
-            $table->string('turno', 10);
-            $table->decimal('sueldo', 10, 2);
+            $table->string('producto', 60);
+            $table->integer('stock_actual')->default(0);
+            $table->integer('stock_minimo')->default(0);
+            $table->decimal('precio', 10, 2)->required();
             $table->timestamps();
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('inventarios');
     }
 };

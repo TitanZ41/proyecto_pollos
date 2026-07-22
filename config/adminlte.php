@@ -345,6 +345,16 @@ return [
             'icon' => 'fas fa-fw fa-calendar-check',
         ],
         [
+            'text' => 'Detalle Pedidos',
+            'url' => '/detalle_pedidos',
+            'icon' => 'fas fa-fw fa-calendar-check',
+        ],
+        [
+            'text' => 'Inventarios',
+            'url' => '/inventarios',
+            'icon' => 'fas fa-fw fa-boxes',
+        ],
+        [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

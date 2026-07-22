@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('detalle_pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 50);
-            $table->string('ci', 8)->unique();
-            $table->string('rol', 15);
-            $table->string('turno', 10);
-            $table->decimal('sueldo', 10, 2);
+            //$table->foreignId('pedido_id')->constrained('pedidos')->onDelete('cascade');
+            //$table->foreignId('inventarios_id')->constrained('inventarios')->onDelete('cascade');
+            $table->decimal('cantidad', 10, 2);
+            $table->decimal('subtotal', 10, 2);
             $table->timestamps();
         });
-    } 
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('detalle_pedidos');
     }
 };
